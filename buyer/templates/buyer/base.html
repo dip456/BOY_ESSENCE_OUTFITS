@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,18 +22,6 @@
         .bi-2x {
             font-size: 2em;
         }
-
-        .topheader {
-            background-color: light; /* Light gray */
-        }
-        .bg-lightblue {
-          background-color: #add8e6; /* Light blue color */
-      }
-  
-
-        .bg-light-blue {
-          background-color: #aed9e0; /* Light blue color */
-      }
     </style>
 </head>
 
@@ -41,16 +30,22 @@
     <div class="container-fluid topheader border-bottom">
         <div class="row py-3">
             <div class="col-12 d-flex justify-content-end gap-3">
-                
+                <div>Connect with us</div>
+                <div class="d-flex gap-3 align-items-center">
+                    <div><a href="#" class="text-dark"><i class="bi bi-youtube"></i></a></div>
+                    <div><a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a></div>
+                    <div><a href="#" class="text-dark"><i class="bi bi-instagram"></i></a></div>
+                    <div><a href="#" class="text-dark"><i class="bi bi-facebook"></i></a></div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-lightblue">
-      <div class="container-fluid">
-            <a class="navbar-brand" href="">
-                <img src="" alt="" width="60px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'login_page_view' %}">
+                <img src="{% static 'buyer/images/logo.png' %}" alt="Not Found" width="60px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,20 +54,25 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="">HOME</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index_page_view'%}">HOME</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="">SHOP</a>
+                        <a class="nav-link" href="">NEW</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="">CART</a>
+                        <a class="nav-link" href="">CATEGORIES</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">SALE</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="">CART</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="">ABOUT US</a>
+                        <a class="nav-link" href="">Contact Us</a>
                     </li>
-                    
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="">CONTACT US</a>
+                        <a class="nav-link" href="">About Us</a>
                     </li>
                     
                 </ul>
@@ -104,59 +104,58 @@
 
     <!-- navbar end -->
     {% block body %}
-    this is home page
     <!-- body content -->
     {% endblock %}
 
     <!-- footer start -->
-    <footer class="bg-light-blue text-black py-4"> <!-- Changed text-light to text-black -->
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-md-4 mb-3 mb-md-0">
-                  <h5>About Us</h5>
-                  <p>Welcome to Boy Essence Outfits, where we curate a collection of sophisticated men's attire, blending refined style with individual flair. Our meticulously chosen garments are crafted from premium materials, ensuring both comfort and durability. Step into a world where confidence meets timeless elegance, and discover the essence of true gentlemanly fashion.</p>
-              </div>
-              <div class="col-md-2 mb-3 mb-md-0">
-                  <h5>Shop</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-black text-decoration-none">New Arrivals</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Best Sellers</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Special Offers</a></li> <!-- Changed text-white to text-black -->
-                  </ul>
-              </div>
-              <div class="col-md-2 mb-3 mb-md-0">
-                  <h5>Categories</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-black text-decoration-none">Clothing</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Shoes</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">boys t-shirt</a></li> <!-- Changed text-white to text-black -->
-                  </ul>
-              </div>
-              <div class="col-md-2 mb-3 mb-md-0">
-                  <h5>Customer Service</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-black text-decoration-none">Shipping Information</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Returns & Exchanges</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">FAQs</a></li> <!-- Changed text-white to text-black -->
-                  </ul>
-              </div>
-              <div class="col-md-2 mb-3 mb-md-0">
-                  <h5>Company</h5>
-                  <ul class="list-unstyled">
-                      <li><a href="#" class="text-black text-decoration-none">Privacy Policy</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Terms of Service</a></li> <!-- Changed text-white to text-black -->
-                      <li><a href="#" class="text-black text-decoration-none">Contact Us</a></li> <!-- Changed text-white to text-black -->
-                  </ul>
-              </div>
-          </div>
-          <hr class="my-4">
-          <div class="text-center">
-              <p> Site design / logo &copy; <span id="current_year"></span>
-               All Rights Reserved.</p>
-          </div>
-      </div>
-  </footer>
-  
+    <footer class="bg-dark text-light py-4">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>About Us</h5>
+                    <p>Welcome to Boy Essence Outfits, your premier destination for sophisticated men's attire. At Boy Essence, we curate a meticulously chosen collection, blending refined style with individual flair. Our garments are crafted from premium materials, ensuring both comfort and durability. Step into a world where confidence meets timeless elegance, and discover the essence of true gentlemanly fashion with Boy Essence Outfits.</p>
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">New Arrivals</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Best Sellers</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Special Offers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Electronics</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Clothing</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Home & Garden</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                    <h5>Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Shipping Information</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                        <li><a href="" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p> Site design / logo &copy; <span id="current_year"></span> Witzcode; user contributions licensed
+                    under CC BY-SA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- footer end -->
     <script>

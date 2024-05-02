@@ -1,0 +1,24 @@
+{% extends 'buyer/base.html' %}
+{% load static %}
+{% block title %}
+Home
+{% endblock%}
+{% block styles %}
+{% endblock %}
+{% block body %}
+<div class="container-fluid col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="{% static 'buyer/images/Image_1.avif' %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="750" height="400" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-6 fw-light lh-1 mb-3">Welcome to <span class="text-warning fw-bold">BOY ESSENCE OUTFITS</span> - Where Shopping Meets Convenience!</h1>
+        <p class="lead">Discover the essence of style at Boy Essence Outfits. Shop our curated selection of sophisticated men's attire, ranging from timeless classics to contemporary trends. Explore premium garments crafted from quality materials, ensuring both comfort and durability. Elevate your wardrobe with our collection, where confidence meets refined elegance. Experience the essence of true gentlemanly fashion with Boy Essence Outfits.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Start shopping</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Best Offer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock%}
