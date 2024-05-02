@@ -13,3 +13,9 @@ def login_page_view(request):
 
 def ragistration_page_view(request):
     return render(request,'buyer/ragistration.html')
+
+def contactus_page_view(request):
+    return render(request,'buyer/contact.html')
+
+def about_page_view(request):
+    return render(request,'buyer/about.html')

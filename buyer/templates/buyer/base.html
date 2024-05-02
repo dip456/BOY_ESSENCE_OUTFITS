@@ -19,6 +19,7 @@
     {% block styles %}
     {% endblock %}
     <style>
+       
         .bi-2x {
             font-size: 2em;
         }
@@ -27,26 +28,12 @@
 
 <body>
 
-    <div class="container-fluid topheader border-bottom">
-        <div class="row py-3">
-            <div class="col-12 d-flex justify-content-end gap-3">
-                <div>Connect with us</div>
-                <div class="d-flex gap-3 align-items-center">
-                    <div><a href="#" class="text-dark"><i class="bi bi-youtube"></i></a></div>
-                    <div><a href="#" class="text-dark"><i class="bi bi-whatsapp"></i></a></div>
-                    <div><a href="#" class="text-dark"><i class="bi bi-instagram"></i></a></div>
-                    <div><a href="#" class="text-dark"><i class="bi bi-facebook"></i></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- navbar start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'login_page_view' %}">
-                <img src="{% static 'buyer/images/logo.png' %}" alt="Not Found" width="60px">
-            </a>
+            <a class="navbar-brand" href="{% url 'login_page_view' %}"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,10 +56,10 @@
                         <a class="nav-link" href="">CART</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact Us</a>
+                        <a class="nav-link" href="{%url 'contactus_page_view'%}">CONTACT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">About Us</a>
+                        <a class="nav-link" href="{% url 'about_page_view'%}">ABOUT US</a>
                     </li>
                     
                 </ul>
@@ -108,51 +95,44 @@
     {% endblock %}
 
     <!-- footer start -->
-    <footer class="bg-dark text-light py-4">
+    <hr style="margin:0px" class="w-100 border-dark-subtle">
+
+    <footer class="bg-white text-black py-4">
         <div class="container-fluid">
 
             <div class="row">
                 <div class="col-md-4 mb-3 mb-md-0">
                     <h5>About Us</h5>
-                    <p>Welcome to Boy Essence Outfits, your premier destination for sophisticated men's attire. At Boy Essence, we curate a meticulously chosen collection, blending refined style with individual flair. Our garments are crafted from premium materials, ensuring both comfort and durability. Step into a world where confidence meets timeless elegance, and discover the essence of true gentlemanly fashion with Boy Essence Outfits.</p>
+                    <p>Welcome to Boy Essence Outfits, your premier destination for sophisticated men's attire. At Boy Essence, we curate a meticulously chosen collection, blending refined style with individual flair. Our garments are crafted from premium materials, ensuring both comfort and durability.</p>
                 </div>
                 <div class="col-md-2 mb-3 mb-md-0">
-                    <h5>Shop</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">New Arrivals</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Best Sellers</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Special Offers</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 mb-3 mb-md-0">
-                    <h5>Categories</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Electronics</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Clothing</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Home & Garden</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 mb-3 mb-md-0">
-                    <h5>Customer Service</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Shipping Information</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Returns & Exchanges</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 mb-3 mb-md-0">
-                    <h5>Company</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
-                        <li><a href="" class="text-white text-decoration-none">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+    <h5>Shop</h5>
+    <ul class="list-unstyled text-black"> <!-- Added text-black class -->
+        <li><a href="#" class="text-black text-decoration-none">New Arrivals</a></li>
+        <li><a href="#" class="text-black text-decoration-none">Best Sellers</a></li>
+        <li><a href="#" class="text-black text-decoration-none">Special Offers</a></li>
+    </ul>
+</div>
+
+
+<div class="col-md-2 mb-3 mb-md-0">
+    <h5>Customer Service</h5>
+    <ul class="list-unstyled text-black"> <!-- Added text-black class -->
+        <li><a href="#" class="text-black text-decoration-none">Shipping Information</a></li>
+        <li><a href="#" class="text-black text-decoration-none">Returns & Exchanges</a></li>
+    </ul>
+</div>
+<div class="col-md-2 mb-3 mb-md-0">
+    <h5>Company</h5>
+    <ul class="list-unstyled text-black"> <!-- Added text-black class -->
+        <li><a href="#" class="text-black text-decoration-none">Privacy Policy</a></li>
+        <li><a href="#" class="text-black text-decoration-none">Terms of Service</a></li>
+        <li><a href="" class="text-black text-decoration-none">Contact Us</a></li>
+    </ul>
+</div>
             <hr class="my-4">
             <div class="text-center">
-                <p> Site design / logo &copy; <span id="current_year"></span> Witzcode; user contributions licensed
-                    under CC BY-SA. All Rights Reserved.</p>
+                <p> Site design / logo &copy; <span id="current_year"></span> All Rights Reserved.</p>
             </div>
         </div>
     </footer>
