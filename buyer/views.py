@@ -19,3 +19,9 @@ def contactus_page_view(request):
 
 def about_page_view(request):
     return render(request,'buyer/about.html')
+
+def categories_page(request):
+    return render(request,'buyer/categories.html')
+
+def cart_page_view(request):
+    return render(request,'buyer/cart.html')

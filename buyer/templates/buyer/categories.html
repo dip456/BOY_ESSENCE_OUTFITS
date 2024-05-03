@@ -1,0 +1,72 @@
+{% extends 'buyer/base.html' %}
+{% load static %}
+{% block title %}
+Categories
+{% endblock%}
+{% block styles %}
+<style>
+    /* Some basic styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .category {
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    .category img {
+        float: left;
+        margin-right: 15px;
+        max-width: 150px;
+        max-height: 100px;
+    }
+    .category-details {
+        overflow: hidden;
+    }
+    .category-name {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .category-price {
+        font-size: 16px;
+        color: green;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<body>
+    <div class="container">
+        <h2>Product Categories</h2>
+        <div class="category">
+            <img src="Image_2.jpg" alt="Category 1">
+            <div class="category-details">
+                <div class="category-name">Category 1</div>
+                <div class="category-price">$20.00</div>
+            </div>
+        </div>
+        <div class="category">
+            <img src="Image_1.avif" alt="Category 2">
+            <div class="category-details">
+                <div class="category-name">Category 2</div>
+                <div class="category-price">$25.00</div>
+            </div>
+        </div>
+        <div class="category">
+            <img src="img3.jpg" alt="Category 3">
+            <div class="category-details">
+                <div class="category-name">Category 3</div>
+                <div class="category-price">$30.00</div>
+            </div>
+        </div>
+        <!-- Add more categories as needed -->
+    </div>
+</body>{% endblock %}

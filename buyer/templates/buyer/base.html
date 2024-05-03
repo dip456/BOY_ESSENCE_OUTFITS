@@ -43,17 +43,17 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'index_page_view'%}">HOME</a>
                     </li>
-                    <li class="nav-item">
+                    {% comment %} <li class="nav-item">
                         <a class="nav-link" href="">NEW</a>
-                    </li>
+                    </li> {% endcomment %}
                     <li class="nav-item">
-                        <a class="nav-link" href="">CATEGORIES</a>
+                        <a class="nav-link" href="{% url 'categories_page' %}">CATEGORIES</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#">SALE</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="">CART</a>
+                        <a class="nav-link" href="{% url 'cart_page_view' %}">CART</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{%url 'contactus_page_view'%}">CONTACT US</a>
