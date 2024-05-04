@@ -55,7 +55,9 @@ login
     <div class="container-fluid col-xxl-8 px-4 py-5">
         <div class="login-container">
             <h3 class="text-center mb-4">Login</h3>
-            <form>
+            <form action="" method="post">
+                {% csrf_token %}
+
                 <div class="form-floating mb-3">
                     
                     <input type="email" class="form-control" id="email" placeholder="name@example.com">
