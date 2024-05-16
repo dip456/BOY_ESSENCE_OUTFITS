@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+
 import os
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lbw@y6t1ky$1$w)454ns7#-0e9n#4y_ar19ynv4^-#c@us3c2!'
+SECRET_KEY = os.environ.get('PROJECT_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False')
 
 ALLOWED_HOSTS = []
 
@@ -135,3 +140,7 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = os.environ.get('EMAIL_PORT')
+
+# Razorpay config
+RAZOR_KEY_ID  = os.environ.get('RAZOR_KEY_ID')
+RAZOR_KEY_SECRET  = os.environ.get('RAZOR_KEY_SECRET')
