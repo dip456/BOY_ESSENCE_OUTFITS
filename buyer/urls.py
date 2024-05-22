@@ -28,6 +28,9 @@ urlpatterns = [
     path('cart/',cart_page_view,name='cart_page_view'),
     path('cart/pay/<amt>',pay,name="pay"),
     path('cart/<str:product_id>/', add_item_in_cart, name='add_item_in_cart'),
+    path('/ajax/post/', my_ajay_view, name='my_ajay_view'),
+    path('order/confirmation/<int:order_id>/', order_confirmation, name='order_confirmation'),
+
     path('profile-update/', update_personal_info, name='update_personal_info'),
     path('add_address_view/', add_address_view, name='add_address_view'),
 

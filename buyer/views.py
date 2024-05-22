@@ -5,6 +5,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
 
@@ -21,7 +22,7 @@ from master.utils.BOY_PAYMENTGAT.razorpay_payment import client
 from master.utils.BOY_RANDOM.otp import generate_new_otp
 from seller.models import MyProductsModel
 from seller.models import MyCategoriesModel
-from buyer.models import MyCartModel
+from buyer.models import MyCartModel,OrderModel
 
 
 
@@ -273,6 +274,17 @@ def pay(request,amt):
     print(p)
     return JsonResponse(p)
 
+def my_ajay_view(request):
+    if request.method == 'POST':
+        data = request.POST.get('raz_payment_id')
+        print(data)
+        res = {
+            'message':'Data recieved success',
+            'data':data
+        }
+        return JsonResponse(res)
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
 def prodcut_exist_in_cart(product_id):
     return MyCartModel.objects.filter(product_id=product_id).exists()
 
@@ -292,3 +304,6 @@ def add_item_in_cart(request, product_id):
     
     return redirect('cart_page_view')
 
+def order_confirmation(request, order_id):
+    order = OrderModel.objects.get(id=order_id)
+    return render(request, 'buyer/order_confirmation.html', {'order': order})

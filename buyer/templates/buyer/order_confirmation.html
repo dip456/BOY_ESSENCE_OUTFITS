@@ -1,0 +1,21 @@
+{% extends 'buyer/base.html' %}
+{% block title %}
+Order Confirmation
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Order Confirmation</div>
+                <div class="card-body">
+                    <p>Your order has been confirmed!</p>
+                    <p>Order ID: {{ order.id }}</p>
+                    <p>Transaction ID: {{ order.razorpay_payment_id }}</p>
+                    <!-- You can display more order details here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
