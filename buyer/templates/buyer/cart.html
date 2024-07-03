@@ -1,10 +1,7 @@
 {% extends 'buyer/base.html' %}
 {% load static %}
-{% block  meta %}
-<meta name="csrf-token" content="{{ csrf_token }}">
-{% endblock %}
 {% block title %}
-Cart |
+Cart
 {% endblock%}
 {% block styles %}
 <style>
@@ -54,7 +51,6 @@ Cart |
         border-radius: 1rem;
     }
 </style>
-
 {% endblock %}
 {% block body %}
 <div class="container">
@@ -153,7 +149,7 @@ Cart |
             <!-- end card -->
             <div class="row my-4">
                 <div class="col-sm-6">
-                    <a href="categories.html" class="btn btn-link text-muted">
+                    <a href="ecommerce-products.html" class="btn btn-link text-muted">
                         <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
                 </div> <!-- end col -->
                 <div class="col-sm-6">
@@ -180,18 +176,24 @@ Cart |
                                         <td>Sub Total :</td>
                                         <td class="text-end" id="total-selected-cart-item-price">₹ 0</td>
                                     </tr>
-                                
+                                    <!-- <tr>
+                                        <td>Discount : </td>
+                                        <td class="text-end">- ₹ 78</td>
+                                    </tr> -->
                                     <tr>
                                         <td>Shipping Charge :</td>
-                                        <td class="text-end">₹ 30</td>
+                                        <td class="text-end">₹ 25</td>
                                     </tr>
-                                    
+                                    <!-- <tr>
+                                        <td>Estimated Tax : </td>
+                                        <td class="text-end">₹ 18.20</td>
+                                    </tr> -->
                                     <tr class="bg-light">
                                         <th>Total :</th>
                                         <td class="text-end">
                                             ₹
                                             <span class="fw-bold" id="final-order-price">
-                                                30
+                                                25
                                             </span>
                                         </td>
                                     </tr>
@@ -265,12 +267,9 @@ Cart |
                 var parentDiv = checkbox.closest('.card-body');
                 var totalPriceElement = parentDiv.querySelector('#cart-products-price');
                 var totalPrice = parseFloat(totalPriceElement.textContent.replace('₹', '').trim());
-                console.log(totalPrice)
                 totalSelectedPrice += totalPrice;
-                order_total_price.innerHTML = totalSelectedPrice + 30
-                order_amount.value = totalSelectedPrice + 30;
-
-                
+                order_total_price.innerHTML = totalSelectedPrice + 25
+                order_amount.value = totalSelectedPrice + 25;
             }
         });
         // Update the total price of selected cart items in the order summary
@@ -285,7 +284,7 @@ Cart |
         }).then((result) => {
             alert(result);
             var options = {
-                key: "rzp_test_AMueztacHlhO1p", // Enter the Key ID generated from the Dashboard
+                key: "rzp_test_p6SFanFKFQFSZO", // Enter the Key ID generated from the Dashboard
                 amount: result.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                 currency: "INR",
                 name: "Acme Corp",
@@ -296,40 +295,10 @@ Cart |
                     alert(response.razorpay_payment_id);
                     alert(response.razorpay_order_id);
                     alert(response.razorpay_signature);
-
-                    const data_ = {
-                        'raz_payment_id':response.razorpay_payment_id,
-                        'raz_order_id':response.razorpay_order_id,
-                        'raz_signature':response.razorpay_signature
-                    }
-
-                    function post_order_payment_data(data){
-                        console.log("---data---->",data)
-let token = 
-console.log("--==-=->",token.content)
-// check a url is ok or not
-                        fetch('https://api.razorpay.com/v1/payments'), {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type':'application/json',
-                                'X-CSRFToken': document.querySelector('meta[name=csrf-token]')
-                            },
-                            body: JSON.stringify(data)
-                        .then(response => response?.json?.())
-                        .then(data => {
-                            console.log('Success: ', data);
-                        })
-                        .catch((error) => {
-                            console.log("Error: ", error);
-                        });
-                    }
-                    
-                    post_order_payment_data(data_)
-
                 },
                 prefill: {
-                    name: "Dipak Kumar",
-                    email: "dipak.kumar@example.com",
+                    name: "Gaurav Kumar",
+                    email: "gaurav.kumar@example.com",
                     contact: "9000090000",
                 },
                 notes: {

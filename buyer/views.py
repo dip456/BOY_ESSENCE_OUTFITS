@@ -24,12 +24,19 @@ from seller.models import MyProductsModel
 from seller.models import MyCategoriesModel
 from buyer.models import MyCartModel,OrderModel
 
+import razorpay
+
+
 
 
 
 
 import os
 import uuid
+
+client = razorpay.Client(auth=("RAZOR_KEY_ID", "RAZOR_KEY_SECRET"))
+
+
 
 
 
@@ -274,6 +281,8 @@ def pay(request,amt):
     print(p)
     return JsonResponse(p)
 
+
+
 def my_ajay_view(request):
     if request.method == 'POST':
         data = request.POST.get('raz_payment_id')
@@ -304,6 +313,3 @@ def add_item_in_cart(request, product_id):
     
     return redirect('cart_page_view')
 
-def order_confirmation(request, order_id):
-    order = OrderModel.objects.get(id=order_id)
-    return render(request, 'buyer/order_confirmation.html', {'order': order})
